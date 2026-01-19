@@ -1,17 +1,18 @@
 import React from 'react'
-import { Router } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import NavBar from "./components/Navbar.jsx";
+import Player from './components/Player.jsx';
 
 const App = () => {
   return (
-    <>
-    <NavBar />
-    <Router>
-      <div className='bg-black h-screen text-white text-2xl font-bold'>
-        <h1 className='text-center bg-blue-400'>Aksath Lavde Gandu</h1>
-      </div>
-    </Router>
-    </>
+    <div className='bg-black h-screen flex flex-col justify-between'>
+      <NavBar />
+    <Routes>
+      <Route path='/' element={<h1 className='text-center bg-red-400'>Home</h1>} />
+      <Route path='/search' element={<h1 className='text-center bg-red-400'>Search</h1>} /> 
+    </Routes>
+    <Player />
+    </div>
   )
 }
 
