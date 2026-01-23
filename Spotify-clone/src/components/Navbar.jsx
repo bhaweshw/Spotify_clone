@@ -1,10 +1,18 @@
-import React from 'react'
+import NavIcon from '../assets/Navicon.svg'
 
-const Navbar = () => {
+function Navbar() {
   return (
-    <div>
-     <h1 className='text-center bg-red-400'>Navbar</h1> 
-    </div>
+    <nav className="text-white flex gap-0.5 justify-between">
+      <div>NavIcon</div>
+      <ul className="flex justify-around w-[50vw]">
+      <div>spacebar</div>
+        <li><button/></li>
+        <li><button /></li>
+        <li>whats new</li>
+        <li>friend activity</li>
+        <li>profile</li>
+      </ul>
+    </nav>
   )
 }
 
