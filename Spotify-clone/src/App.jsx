@@ -1,13 +1,11 @@
-
-import NavBar from "./components/Navbar.jsx";
-import Player from './components/Player.jsx';
+import NavBar from "./components/NavBar/Navbar.jsx";
 
 const App = () => {
   return (
     <>
-    <NavBar />
+      <NavBar />
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
