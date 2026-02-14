@@ -1,9 +1,9 @@
-import NavBar from "./components/NavBar/Navbar.jsx";
+import HomePage from "./HomePage.jsx";
 
 const App = () => {
   return (
     <>
-      <NavBar />
+      <HomePage />
     </>
   );
 };
