@@ -1,8 +1,25 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 
 function SpotifyIcon() {
   const [Coordinates, setCoordinates] = useState({ X: 0, Y: 0 });
   const [showInfo, setShowInfo] = useState(false);
+  const [delay,setDelay] = useState(false)
+
+  useEffect(() => {
+    let timer;
+    if (showInfo) {
+      setTimeout(() => {
+        setDelay(true)
+      }, 800);
+    }else{
+      setDelay(false)
+    }
+  
+    return () => {
+      clearTimeout(timer)
+    }
+  }, [showInfo])
+  
 
   function HandleCoordinates(event) {
     setCoordinates({
@@ -11,19 +28,11 @@ function SpotifyIcon() {
     });
   }
 
-  function HandleMouseEnter() {
-    setShowInfo(true);
-  }
-
-  function HandleMouseLeave() {
-    setShowInfo(false);
-  }
-
   return (
     <div
       className="w-15 ml-[28.5px] hover cursor-pointer relative"
-      onMouseEnter={HandleMouseEnter}
-      onMouseLeave={HandleMouseLeave}
+      onMouseEnter={() => setShowInfo(true)}
+      onMouseLeave={() => setShowInfo(false)}
       onMouseMove={HandleCoordinates}
     >
       <img
@@ -33,7 +42,7 @@ function SpotifyIcon() {
         height="auto"
       />
 
-      {showInfo && (
+      {delay && (
         <span
           id="infobox1"
           className="inline-block font-spotify font-extralight text-[12.5px] px-1.5 pb-1 border spotify-logo z-10 text-center"

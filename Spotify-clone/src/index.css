@@ -63,12 +63,23 @@
     }
 }
 
+@layer utilities{
+    .hiddenkbd{
+        color: #b4b4b4;
+        background-color: rgb(80, 80, 80);
+        font-family: url(./fonts/GothamBook.ttf);
+        font-weight: 400;
+        padding: 0px 1px;
+        border: 2px solid gray  ;
+    }
+}
 
 :root{
     --primaryColor : #1f1f1f;
     --iconText : #ffffffb0;
     --LightUI: white;
     --HoveringEff: #2b2b2b;
+    --iconTheme: #ffffffa5;
 }
 
 body{
